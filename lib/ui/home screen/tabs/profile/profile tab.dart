@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 
 import '../../../../providers/app theme provider.dart';
 import '../../../../providers/event list provider.dart';
+import '../../../../providers/user provider.dart';
 
 class ProfileTab extends StatefulWidget {
   @override
@@ -20,6 +21,7 @@ class ProfileTab extends StatefulWidget {
 class _ProfileTabState extends State<ProfileTab> {
   @override
   Widget build(BuildContext context) {
+    var userProvider = Provider.of<UserProvider>(context);
     var eventListProvider = Provider.of<EventListProvider>(context);
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
@@ -43,11 +45,11 @@ class _ProfileTabState extends State<ProfileTab> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Nada Khaled',
+                  userProvider.currentUser!.name,
                   style: AppStyles.bold24White,
                 ),
                 Text(
-                  'nada@gmail.com',
+                  userProvider.currentUser!.email,
                   style: AppStyles.medium16White,
                 ),
               ],

@@ -24,10 +24,10 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  var nameController = TextEditingController(text: 'nada');
-  var emailController = TextEditingController(text: 'nada@email.com');
-  var passwordController = TextEditingController(text: '123456');
-  var rePasswordController = TextEditingController(text: '123456');
+  var nameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var rePasswordController = TextEditingController();
   var formKey = GlobalKey<FormState>();
 
   @override
